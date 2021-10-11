@@ -21,7 +21,7 @@ done to explore *hierarchical generative models* that can flexibly adapt their l
 ![Model](/img/model.svg){:class="model-img"}
 
 {:.image-caption}
-Example of a three-level VPR model unrolled over five timesteps.
+**Example of a three-level VPR model** unrolled over five timesteps.
 
 #### Event boundary detection: enforcing temporal hierarchy
 
@@ -29,9 +29,15 @@ You may have noticed that the unrolled model updates its states at different tim
 
 :eyes: At the heart of VPR is a **mechanism that is used for detecting predictable and unpredictable changes** in the observable features over time, and thus determine the boundaries of events. At every level of the model, the event detection is used for controlling the structure of the unrolled model over time by allowing or disallowing propagation of bottom-up information to the higher levels of the hierarchy.
 
-Event detection system serves two primary functions in our model. First, detecting layerwise events in a sequence of observations is utilised for triggering an **update on a block's state** by inferring its new posterior state. Matching block updates with detectable changes in layerwise features (event boundaries) prompts **VPR to represent spatiotemporal features in levels** that most closely mimic their rate of change over time. Similarly, learning to transition between states *only* when they signify a change in the features of the data means that **VPR learns to make time-agnostic (or jumpy) transitions** -- from one event boundary to another. Second, the detection mechanism is used for blocking bottom-up communication and thus stopping the propagation of new information to the deeper levels of the hierarchy. This is meant to encourage the model to better organise its spatiotemporal representations by **enforcing a temporal hierarchy** onto its generative process.
+Event detection system serves two primary functions in our model: 
+1. Detecting layerwise events in a sequence of observations is utilised for triggering an **update on a block's state** by inferring its new posterior state. Matching block updates with detectable changes in layerwise features (event boundaries) prompts **VPR to represent spatiotemporal features in levels** that most closely mimic their rate of change over time. Similarly, learning to transition between states *only* when they signify a change in the features of the data means that **VPR learns to make time-agnostic (or jumpy) transitions** -- from one event boundary to another. 
+2. Second, the detection mechanism is used for blocking bottom-up communication and thus stopping the propagation of new information to the deeper levels of the hierarchy. This is meant to encourage the model to better organise its spatiotemporal representations by **enforcing a temporal hierarchy** onto its generative process.
 
 ![Model-GIF](/img/vpr-gif3.gif){:class="model-gif"}
+
+{:.image-caption}
+**Short demonstration of how VPR works using the Moving Ball dataset**. Notice how bottom-up signal propagates up only when the ball's colour changes (i.e. an event boundary has been detected).
+
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=coPkht8gEFQ" frameborder="0"></iframe> -->
 
 
