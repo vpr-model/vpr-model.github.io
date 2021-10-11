@@ -1,0 +1,8 @@
+title: Variational Predictive Routing with Nested Subjective Timescales
+description: Hierarchical generative model for sequential data
+show_downloads: no
+google_analytics:
+theme: jekyll-theme-slate
+url: "https://vpr-model.github.io"
+plugins:
+  - jemoji

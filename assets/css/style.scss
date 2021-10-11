@@ -1,0 +1,24 @@
+---
+---
+
+@import "jekyll-theme-slate";
+
+.outer {
+    background-image: '/img/header.png';
+}
+
+.model-img {
+    width: 100%;
+}
+
+.model-gif {
+    width: 100%;
+    // margin-left: 50%;
+    // transform: translateX(-50%);
+}
+
+.image-caption {
+    text-align: center;
+    font-size: .8rem;
+    color: light-grey;
+}
