@@ -56,7 +56,7 @@ Brief summary:
 
 - **VPR learns hierarchical and temporally-disentangled representations**. VPR employs its hierarchical structure to disentangle the temporal features extracted from the dataset. Each layer of VPR is equipped with an event detection mechanism that guides the model to distribute representations of temporal features across the hierarchy and learn jumpy predictions between event boundaries.
 
-- **VPR can adapt to datasets with different temporal dynamics**. To test this property, we instantiate two versions of the Moving Ball dataset -- with fast and slow ball movements. VPR performs about 30% fewer block updates under slow ball movement compared to VPR under fast ball movement, while maintaining high F1 score of event detection in both cases.
+- **VPR can adapt to datasets with different temporal dynamics**. To test this property, we instantiate two versions of the Moving Ball dataset -- with fast and slow ball movements. In our experiments, we show that VPR performs about 30% fewer block updates under slow ball movement compared to VPR under fast ball movement, while maintaining high F1 score of event detection in both cases.
 
 <!-- {% include image.html url="/img/Fig5.svg" description="My cat, Robert Downey Jr." %} -->
 <!-- <figure>
@@ -89,9 +89,7 @@ The model is able to generate diverse images with respect to the spatiotemporal 
 ```bib
 @article{2021-VPR,
   title={Variational Predictive Routing with Nested Subjective Timescales},
-  author={Alexey Zakharov and Qinghai and Z. Fountas},
-  journal={ArXiv},
+  author={Alexey Zakharov and Qinghai Guo and Zafeirios Fountas},
   year={2021},
-  volume={abs/2021.9999}
 }
 ```
