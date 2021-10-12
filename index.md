@@ -18,10 +18,15 @@ done to explore *hierarchical generative models* that can flexibly adapt their l
 :building_construction: VPR consists of computational **blocks that are stacked together in a hierarchy**. Figure on the right shows the insides of a single block with key variables and channels of information flow. Each block in layer $$n$$ consists of three deterministic variables $$(x^n_t, c^n_t, d^n_t)$$ that represent the three channels of communication between the blocks: <span style="color:#009E73">bottom-up</span> (encoding), <span style="color:#E69F00">top-down</span> (decoding), and <span style="color:#56B4E9">temporal</span> (transitioning), respectively. These variables are used to parametrise a random variable $$s^n_t$$ that contains the learned representations in a given level of the hierarchy. Figure below shows an example of a three-level VPR model unrolled over five timesteps, demonstrating how communications between the blocks interact over time.
 <br clear="left"/>
 
+<br />
+
 ![Model](/img/model.svg){:class="model-img"}
 
 {:.image-caption}
 **Example of a three-level VPR model** unrolled over five timesteps.
+
+<br />
+
 
 #### Event boundary detection: enforcing temporal hierarchy
 
@@ -38,9 +43,7 @@ Event detection system serves two primary functions in our model:
 {:.image-caption}
 **Short demonstration of how VPR works using the Moving Ball dataset**. Notice how bottom-up signal propagates up only when the ball's colour changes (i.e. an event boundary has been detected).
 
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/watch?v=coPkht8gEFQ" frameborder="0"></iframe> -->
-
-
+<br />
 
 ## Experiments and results
 
@@ -54,25 +57,15 @@ Event detection system serves two primary functions in our model:
 {:.image-caption}
 **Datasets: Shapes3D Dynamic and Moving Ball**. Shapes3D Dynamic includes three colour features that change with different periodicity. Moving Ball includes a moving ball that changes colour upon a wall bounce or at a random time.
 
-<!-- ![Model-GIF](/img/shape3d-gif.gif){:class="model-img"} -->
+<br />
 
-Brief summary:
-
-- **VPR accurately detects event boundaries.** VPR's event detection mechanism quickly achieves high F1 score in the Moving ball (F1 = $$0.97\pm0.03$$), and 3D Shapes Dynamic (F1 = $$0.97\pm0.02$$) datasets. We also observe a significantly better performance compared to the existing temporal abstraction model VTA (cite), which achieves a maximum of $$0.52\pm0.05$$ F1 score in the Moving Ball dataset. 
+- **VPR accurately detects event boundaries.** VPR's event detection mechanism quickly achieves high F1 score in the Moving ball (F1 = $$0.97\pm0.03$$), and 3D Shapes Dynamic (F1 = $$0.97\pm0.02$$) datasets. We also observe a significantly better performance compared to the existing temporal abstraction model VTA (<a style="color:#000000" href="https://papers.nips.cc/paper/2019/hash/b5d3ad899f70013367f24e0b1fa75944-Abstract.html">Kim, 2019</a>), which achieves a maximum of $$0.52\pm0.05$$ F1 score in the Moving Ball dataset. 
 
 - **VPR learns hierarchical and temporally-disentangled representations**. VPR employs its hierarchical structure to disentangle the temporal features extracted from the dataset. Each layer of VPR is equipped with an event detection mechanism that guides the model to distribute representations of temporal features across the hierarchy and learn jumpy predictions between event boundaries.
 
 - **VPR can adapt to datasets with different temporal dynamics**. To test this property, we instantiate two versions of the Moving Ball dataset -- with fast and slow ball movements. In our experiments, we show that VPR performs about 30% fewer block updates under slow ball movement compared to VPR under fast ball movement, while maintaining high F1 score of event detection in both cases.
 
-<!-- {% include image.html url="/img/Fig5.svg" description="My cat, Robert Downey Jr." %} -->
-<!-- <figure>
-  <img src="{{site.url}}/img/Fig5.svg" alt="my alt text"/>
-  <figcaption>This is my caption text.</figcaption>
-</figure> -->
-
-<!-- | ![/img/Fig5.svg](/img/Fig5.svg) | 
-|:--:| 
-| *Space* | -->
+<br />
 
 ![My image](/img/Fig5.svg){:class="model-img"}
 
