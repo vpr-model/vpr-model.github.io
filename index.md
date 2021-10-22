@@ -86,9 +86,11 @@ The model is able to generate diverse images with respect to the spatiotemporal 
 
 
 ```bib
-@article{2021-VPR,
+@article{Zakharov2021VPR,
   title={Variational Predictive Routing with Nested Subjective Timescales},
   author={Alexey Zakharov and Qinghai Guo and Zafeirios Fountas},
+  journal={ArXiv},
   year={2021},
+  volume={abs/2110.11236}
 }
 ```
