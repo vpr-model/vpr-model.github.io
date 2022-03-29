@@ -4,7 +4,9 @@
 @import "jekyll-theme-slate";
 
 .outer {
-    background-image: '/img/header.png';
+    // background-image: '/img/header.png';
+    background: rgb(253, 253, 253);
+    background: linear-gradient(0deg, rgb(0, 78, 33) 0%, rgb(0, 37, 14) 100%);
 }
 
 .model-img {
@@ -18,7 +20,11 @@
 }
 
 .image-caption {
-    text-align: center;
+    text-align: justify;
     font-size: .8rem;
     color: light-grey;
+}
+
+.image-caption-short {
+    text-align: center;
 }

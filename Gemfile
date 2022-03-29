@@ -5,5 +5,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "webrick", "~> 1.7"
-gem "jekyll-spaceship"
-gem "jemoji"
+
+gem "jemoji", "~> 0.12.0"
